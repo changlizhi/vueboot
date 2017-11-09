@@ -1,31 +1,29 @@
 <template>
-    <div class='Usetabs'>
-        <tabs>
-            <tab header="one">
-                ...
-            </tab>
-            <tab header="two"
-                 disabled>
-                ...
-            </tab>
-            <tab-group header="group1">
-                <tab header="three">
-                    ...
-                </tab>
-                <tab header="four"
-                     disabled>
-                    ...
-                </tab>
-            </tab-group>
-            <tab-group header="group2">
-                <tab header="five">
-                    ...
-                </tab>
-            </tab-group>
-        </tabs>
-    </div>
+  <tabs>
+    <tab-group>
+      <tab header='one'>
+        ...ssssssssss
+      </tab>
+    </tab-group>
+    <tab header='two' disabled>
+      ...
+    </tab>
+    <tab-group header='group1'>
+      <tab header='three'>
+        ...
+      </tab>
+      <tab header='four' disabled>
+        ...
+      </tab>
+    </tab-group>
+    <tab-group header='group2'>
+      <tab header='five'>
+        ...
+      </tab>
+    </tab-group>
+  </tabs>
 </template>
-<script type='text/ecmascript-6'>
+<script>
   import {
     tabGroup,
     tabset,

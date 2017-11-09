@@ -1,44 +1,33 @@
 <template>
-    <div id='app'>
-        <router-view></router-view>
-
-        <a v-link="{path:'/usetabs'}"
-           style='font-size: 22px'>usetabs
-        </a>
+  <div class='box'>
+    <Csshouye class='zuocedaohang'></Csshouye>
+    <div class='content'>
+      <router-view></router-view>
     </div>
+  </div>
 </template>
 
 <script>
-  export default {}
+  import Csshouye from 'src/components/csshouye/Csshouye'
+  export default {
+    components: {
+      Csshouye
+    }
+  }
 </script>
 
-<style>
-    html {
-        height: 100%;
-    }
-
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
-
-    #app {
-        color: #2c3e50;
-        margin-top: -100px;
-        max-width: 600px;
-        font-family: Source Sans Pro, Helvetica, sans-serif;
-        text-align: center;
-    }
-
-    #app a {
-        color: #42b983;
-        text-decoration: none;
-    }
-
-    .logo {
-        width: 100px;
-        height: 100px
-    }
+<style scoped>
+  .box {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    background-color: #F7F8FA;
+  }
+  .zuocedaohang {
+    flex: 0 0 200px;
+    border: 1px solid #C1C1C1;
+  }
+  .content {
+    flex: 1;
+  }
 </style>
