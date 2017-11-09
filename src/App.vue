@@ -1,6 +1,6 @@
 <template>
   <div class='box'>
-    <Shouye class='zuocedaohang'></Shouye>
+    <Csshouye class='zuocedaohang'></Csshouye>
     <div class='content'>
       <router-view></router-view>
     </div>
@@ -8,10 +8,10 @@
 </template>
 
 <script>
-  import Shouye from 'src/components/shouye/Shouye'
+  import Csshouye from 'src/components/csshouye/Csshouye'
   export default {
     components: {
-      Shouye
+      Csshouye
     }
   }
 </script>
