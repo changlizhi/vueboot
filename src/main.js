@@ -4,9 +4,9 @@ import App from './App'
 import 'src/common/css/bootstrap.css'
 import 'src/common/css/bootstrap-theme.css'
 import 'src/common/css/reset.css'
-import Useslider from 'components/useslider/Useslider.vue'
-import Usetabs from 'components/usetabs/Usetabs.vue'
-import Usenavbar from 'components/usenavbar/Usenavbar.vue'
+import Useslider from 'src/components/useslider/Useslider.vue'
+import Usetabs from 'src/components/usetabs/Usetabs.vue'
+import Usenavbar from 'src/components/usenavbar/Usenavbar.vue'
 
 Vue.use(VueRouter)
 let app = Vue.extend(App)
