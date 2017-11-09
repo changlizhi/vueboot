@@ -27,13 +27,15 @@
 </template>
 <script type='text/ecmascript-6'>
   import {
-    tabs,
-    tabGroup
+    tabGroup,
+    tabset,
+    tab
   } from 'vue-strap'
   export default{
     components: {
-      tabs,
-      tabGroup
+      tabs: tabset,
+      tabGroup: tabGroup,
+      tab: tab
     }
   }
 </script>
