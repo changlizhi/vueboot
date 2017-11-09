@@ -1,10 +1,9 @@
 <template>
-    <div role="tabpanel"
-         class="tab-pane active"
-         v-show="show"
-         :class="{hide:!show}"
-         :transition="transition"
-    >
+    <div role='tabpanel'
+         class='tab-pane active'
+         v-show='show'
+         :class='{hide:!show}'
+         :transition='transition'>
         <slot></slot>
     </div>
 </template>
@@ -47,7 +46,7 @@
       }
       if (!tabset._tabset) {
         this._tabset = {}
-        console.warn('Warning: "tab" depend on "tabset" to work properly.')
+        console.warn('Warning: 'tab' depend on 'tabset' to work properly.')
       } else {
         tabset.tabs.push(this)
         if (!this._ingroup) {

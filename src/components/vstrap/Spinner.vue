@@ -1,9 +1,9 @@
 <template>
-    <div :class="['spinner spinner-gritcode',spinnerSize,{'spinner-fixed':fixed}]"
-         v-show="active">
-        <div class="spinner-wrapper">
-            <div class="spinner-circle"></div>
-            <div class="spinner-text">{{text}}</div>
+    <div :class='["spinner spinner-gritcode",spinnerSize,{"spinner-fixed":fixed}]'
+         v-show='active'>
+        <div class='spinner-wrapper'>
+            <div class='spinner-circle'></div>
+            <div class='spinner-text'>{{text}}</div>
         </div>
     </div>
 </template>
@@ -176,7 +176,7 @@
     .oldie .spinner-gritcode .spinner-circle,
     .no-csstransitions .spinner-gritcode .spinner-circle,
     .no-csstransforms3d .spinner-gritcode .spinner-circle {
-        background: url("http://i2.wp.com/www.thegreatnovelingadventure.com/wp-content/plugins/wp-polls/images/loading.gif") center center no-repeat;
+        background: url('http://i2.wp.com/www.thegreatnovelingadventure.com/wp-content/plugins/wp-polls/images/loading.gif') center center no-repeat;
         animation: none;
         margin-left: 0;
         margin-top: 5px;

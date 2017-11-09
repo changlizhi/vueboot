@@ -1,15 +1,14 @@
-<template>
+<template xmlns:v-el='http://www.w3.org/1999/xhtml'>
     <span v-el:trigger>
         <slot></slot>
         <div v-el:popover
-             v-if="show"
-             style="display:block;"
-             :class="['tooltip',placement]"
-             :transition="effect"
-        >
-            <div class="tooltip-arrow"></div>
-            <div class="tooltip-inner">
-                <slot name="content">
+             v-if='show'
+             style='display:block;'
+             :class='["tooltip",placement]'
+             :transition='effect'>
+            <div class='tooltip-arrow'></div>
+            <div class='tooltip-inner'>
+                <slot name='content'>
                     {{{content}}}
                 </slot>
             </div>

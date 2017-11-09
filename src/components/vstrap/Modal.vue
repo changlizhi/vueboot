@@ -1,41 +1,36 @@
-<template>
-    <div role="dialog"
-         v-bind:class="{
-    'modal':true,
-    'fade':effect === 'fade',
-    'zoom':effect === 'zoom'
-    }"
-    >
-        <div v-bind:class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}"
-             role="document"
-             v-bind:style="{width: optionalWidth}">
-            <div class="modal-content">
-                <slot name="modal-header">
-                    <div class="modal-header">
-                        <button type="button"
-                                class="close"
-                                @click="close">
+<template xmlns:v-bind='http://www.w3.org/1999/xhtml'>
+    <div role='dialog'
+         v-bind:class='{"modal":true, "fade":effect === "fade", "zoom":effect === "zoom"}'>
+        <div v-bind:class='{"modal-dialog":true,"modal-lg":large,"modal-sm":small}'
+             role='document'
+             v-bind:style='{width: optionalWidth}'>
+            <div class='modal-content'>
+                <slot name='modal-header'>
+                    <div class='modal-header'>
+                        <button type='button'
+                                class='close'
+                                @click='close'>
                             <span>&times;</span>
                         </button>
-                        <h4 class="modal-title">
-                            <slot name="title">
+                        <h4 class='modal-title'>
+                            <slot name='title'>
                                 {{title}}
                             </slot>
                         </h4>
                     </div>
                 </slot>
-                <slot name="modal-body">
-                    <div class="modal-body"></div>
+                <slot name='modal-body'>
+                    <div class='modal-body'></div>
                 </slot>
-                <slot name="modal-footer">
-                    <div class="modal-footer">
-                        <button type="button"
-                                class="btn btn-default"
-                                @click="close">{{ cancelText }}
+                <slot name='modal-footer'>
+                    <div class='modal-footer'>
+                        <button type='button'
+                                class='btn btn-default'
+                                @click='close'>{{ cancelText }}
                         </button>
-                        <button type="button"
-                                class="btn btn-primary"
-                                @click="callback">{{ okText }}
+                        <button type='button'
+                                class='btn btn-primary'
+                                @click='callback'>{{ okText }}
                         </button>
                     </div>
                 </slot>

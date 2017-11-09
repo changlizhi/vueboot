@@ -1,22 +1,20 @@
-<template>
-    <div
-            v-show="show"
-            v-bind:class="{
-      'alert':		true,
-      'alert-success':(type == 'success'),
-      'alert-warning':(type == 'warning'),
-      'alert-info':	(type == 'info'),
-      'alert-danger':	(type == 'danger'),
-      'top': 			(placement === 'top'),
-      'top-right': 	(placement === 'top-right')
-    }"
-            transition="fade"
-            v-bind:style="{width:width}"
-            role="alert">
-        <button v-show="dismissable"
-                type="button"
-                class="close"
-                @click="show = false">
+<template xmlns:v-bind="http://www.w3.org/1999/xhtml">
+    <div v-show="show"
+         v-bind:class='{
+          "alert": true,
+          "alert-success": (type == "success"),
+          "alert-warning": (type == "warning"),
+          "alert-info": (type == "info"),
+          "alert-danger": (type == "danger"),
+          "top": (placement === "top"),
+          "top-right": (placement === "top-right")}'
+         transition='fade'
+         v-bind:style='{width:width}'
+         role='alert'>
+        <button v-show='dismissable'
+                type='button'
+                class='close'
+                @click='show = false'>
             <span>&times;</span>
         </button>
         <slot></slot>

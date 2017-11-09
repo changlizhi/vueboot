@@ -1,6 +1,6 @@
 <template>
-    <div :class="{'btn-group':buttons,'btn-group-justified':justified,'btn-group-vertical':vertical}"
-         :data-toggle="buttons&&'buttons'">
+    <div :class='{"btn-group":buttons,"btn-group-justified":justified,"btn-group-vertical":vertical}'
+         :data-toggle='buttons&&"buttons"'>
         <slot></slot>
     </div>
 </template>

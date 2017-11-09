@@ -1,88 +1,88 @@
 <template>
-    <div class="datepicker">
-        <input class="form-control datepicker-input"
-               :class="{'with-reset-button': clearButton}"
-               type="text"
-               :placeholder="placeholder"
-               :style="{width:width}"
-               @click="inputClick"
-               v-model="value" />
-        <button v-if="clearButton && value"
-                type="button"
-                class="close"
-                @click="value = ''">
+    <div class='datepicker'>
+        <input class='form-control datepicker-input'
+               :class='{"with-reset-button": clearButton}'
+               type='text'
+               :placeholder='placeholder'
+               :style='{width:width}'
+               @click='inputClick'
+               v-model='value' />
+        <button v-if='clearButton && value'
+                type='button'
+                class='close'
+                @click='value = ""'>
             <span>&times;</span>
         </button>
-        <div class="datepicker-popup"
-             v-show="displayDayView">
-            <div class="datepicker-inner">
-                <div class="datepicker-body">
-                    <div class="datepicker-ctrl">
-                        <span class="datepicker-preBtn glyphicon glyphicon-chevron-left"
-                              aria-hidden="true"
-                              @click="preNextMonthClick(0)"></span>
-                        <span class="datepicker-nextBtn glyphicon glyphicon-chevron-right"
-                              aria-hidden="true"
-                              @click="preNextMonthClick(1)"></span>
-                        <p @click="switchMonthView">{{stringifyDayHeader(currDate)}}</p>
+        <div class='datepicker-popup'
+             v-show='displayDayView'>
+            <div class='datepicker-inner'>
+                <div class='datepicker-body'>
+                    <div class='datepicker-ctrl'>
+                        <span class='datepicker-preBtn glyphicon glyphicon-chevron-left'
+                              aria-hidden='true'
+                              @click='preNextMonthClick(0)'></span>
+                        <span class='datepicker-nextBtn glyphicon glyphicon-chevron-right'
+                              aria-hidden='true'
+                              @click='preNextMonthClick(1)'></span>
+                        <p @click='switchMonthView'>{{stringifyDayHeader(currDate)}}</p>
                     </div>
-                    <div class="datepicker-weekRange">
-                        <span v-for="w in text.daysOfWeek">{{w}}</span>
+                    <div class='datepicker-weekRange'>
+                        <span v-for='w in text.daysOfWeek'>{{w}}</span>
                     </div>
-                    <div class="datepicker-dateRange">
-                        <span v-for="d in dateRange"
-                              :class="d.sclass"
-                              @click="daySelect(d.date,$event)">{{d.text}}
+                    <div class='datepicker-dateRange'>
+                        <span v-for='d in dateRange'
+                              :class='d.sclass'
+                              @click='daySelect(d.date,$event)'>{{d.text}}
                         </span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="datepicker-popup"
-             v-show="displayMonthView">
-            <div class="datepicker-inner">
-                <div class="datepicker-body">
-                    <div class="datepicker-ctrl">
-                        <span class="datepicker-preBtn glyphicon glyphicon-chevron-left"
-                              aria-hidden="true"
-                              @click="preNextYearClick(0)"></span>
-                        <span class="datepicker-nextBtn glyphicon glyphicon-chevron-right"
-                              aria-hidden="true"
-                              @click="preNextYearClick(1)"></span>
-                        <p @click="switchDecadeView">{{stringifyYearHeader(currDate)}}</p>
+        <div class='datepicker-popup'
+             v-show='displayMonthView'>
+            <div class='datepicker-inner'>
+                <div class='datepicker-body'>
+                    <div class='datepicker-ctrl'>
+                        <span class='datepicker-preBtn glyphicon glyphicon-chevron-left'
+                              aria-hidden='true'
+                              @click='preNextYearClick(0)'></span>
+                        <span class='datepicker-nextBtn glyphicon glyphicon-chevron-right'
+                              aria-hidden='true'
+                              @click='preNextYearClick(1)'></span>
+                        <p @click='switchDecadeView'>{{stringifyYearHeader(currDate)}}</p>
                     </div>
-                    <div class="datepicker-monthRange">
-                        <template v-for="m in text.months">
-                            <span :class="{'datepicker-dateRange-item-active':
-                  (text.months[parse(value).getMonth()]  === m) &&
-                  currDate.getFullYear() === parse(value).getFullYear()}"
-                                  @click="monthSelect($index)"
-                            >{{m.substr(0,3)}}
+                    <div class='datepicker-monthRange'>
+                        <template v-for='m in text.months'>
+                            <span :class='{"datepicker-dateRange-item-active":
+                                  (text.months[parse(value).getMonth()]  === m) &&
+                                  currDate.getFullYear() === parse(value).getFullYear()}'
+                                  @click='monthSelect($index)'>
+                                {{m.substr(0,3)}}
                             </span>
                         </template>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="datepicker-popup"
-             v-show="displayYearView">
-            <div class="datepicker-inner">
-                <div class="datepicker-body">
-                    <div class="datepicker-ctrl">
-                        <span class="datepicker-preBtn glyphicon glyphicon-chevron-left"
-                              aria-hidden="true"
-                              @click="preNextDecadeClick(0)"></span>
-                        <span class="datepicker-nextBtn glyphicon glyphicon-chevron-right"
-                              aria-hidden="true"
-                              @click="preNextDecadeClick(1)"></span>
+        <div class='datepicker-popup'
+             v-show='displayYearView'>
+            <div class='datepicker-inner'>
+                <div class='datepicker-body'>
+                    <div class='datepicker-ctrl'>
+                        <span class='datepicker-preBtn glyphicon glyphicon-chevron-left'
+                              aria-hidden='true'
+                              @click='preNextDecadeClick(0)'></span>
+                        <span class='datepicker-nextBtn glyphicon glyphicon-chevron-right'
+                              aria-hidden='true'
+                              @click='preNextDecadeClick(1)'></span>
                         <p>{{stringifyDecadeHeader(currDate)}}</p>
                     </div>
-                    <div class="datepicker-monthRange decadeRange">
-                        <template v-for="decade in decadeRange">
-                            <span :class="{'datepicker-dateRange-item-active':
-                  parse(this.value).getFullYear() === decade.text}"
-                                  @click.stop="yearSelect(decade.text)"
-                            >{{decade.text}}
+                    <div class='datepicker-monthRange decadeRange'>
+                        <template v-for='decade in decadeRange'>
+                            <span :class='{"datepicker-dateRange-item-active":
+                                  parse(this.value).getFullYear() === decade.text}'
+                                  @click.stop='yearSelect(decade.text)'>
+                                {{decade.text}}
                             </span>
                         </template>
                     </div>

@@ -106,7 +106,7 @@ $spinner-xl: 3.5em !default;
 // Default to standard gif for < IE10
 .lt-ie10, .ie9, .oldie, .no-csstransitions, .no-csstransforms3d {
   .spinner-gritcode .spinner-circle {
-    background: url("http://i2.wp.com/www.thegreatnovelingadventure.com/wp-content/plugins/wp-polls/images/loading.gif") center center no-repeat;
+    background: url('http://i2.wp.com/www.thegreatnovelingadventure.com/wp-content/plugins/wp-polls/images/loading.gif') center center no-repeat;
     animation: none;
     margin-left: 0;
     margin-top: 5px;

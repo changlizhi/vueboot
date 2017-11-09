@@ -1,38 +1,38 @@
-<template>
-    <li v-if="isLi"
+<template xmlns:v-el='http://www.w3.org/1999/xhtml'>
+    <li v-if='isLi'
         v-el:dropdown
-        :class="classes">
-        <slot name="button">
-            <a class="dropdown-toggle"
-               role="button"
-               :class="{disabled: disabled}"
-               @keyup.esc="show = false">
+        :class='classes'>
+        <slot name='button'>
+            <a class='dropdown-toggle'
+               role='button'
+               :class='{disabled: disabled}'
+               @keyup.esc='show = false'>
                 {{ text }}
-                <span class="caret"></span>
+                <span class='caret'></span>
             </a>
         </slot>
-        <slot name="dropdown-menu">
+        <slot name='dropdown-menu'>
             <ul v-else
-                class="dropdown-menu">
+                class='dropdown-menu'>
                 <slot></slot>
             </ul>
         </slot>
     </li>
     <div v-else
          v-el:dropdown
-         :class="classes">
-        <slot name="before"></slot>
-        <slot name="button">
-            <button type="button"
-                    class="btn btn-{{type}} dropdown-toggle"
-                    @keyup.esc="show = false"
-                    :disabled="disabled">
+         :class='classes'>
+        <slot name='before'></slot>
+        <slot name='button'>
+            <button type='button'
+                    class='btn btn-{{type}} dropdown-toggle'
+                    @keyup.esc='show = false'
+                    :disabled='disabled'>
                 {{ text }}
-                <span class="caret"></span>
+                <span class='caret'></span>
             </button>
         </slot>
-        <slot name="dropdown-menu">
-            <ul class="dropdown-menu">
+        <slot name='dropdown-menu'>
+            <ul class='dropdown-menu'>
                 <slot></slot>
             </ul>
         </slot>

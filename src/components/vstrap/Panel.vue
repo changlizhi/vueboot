@@ -1,17 +1,16 @@
-<template>
-    <div :class="panelType">
-        <div :class="['panel-heading',{'accordion-toggle':inAccordion}]"
-             @click.prevent="inAccordion&&toggle()">
-            <slot name="header">
-                <h4 class="panel-title">{{ header }}</h4>
+<template xmlns:v-el='http://www.w3.org/1999/xhtml'>
+    <div :class='panelType'>
+        <div :class='["panel-heading",{"accordion-toggle":inAccordion}]'
+             @click.prevent='inAccordion&&toggle()'>
+            <slot name='header'>
+                <h4 class='panel-title'>{{ header }}</h4>
             </slot>
         </div>
-        <div class="panel-collapse"
+        <div class='panel-collapse'
              v-el:panel
-             v-show="isOpen"
-             transition="collapse"
-        >
-            <div class="panel-body">
+             v-show='isOpen'
+             transition='collapse'>
+            <div class='panel-body'>
                 <slot></slot>
             </div>
         </div>

@@ -1,20 +1,19 @@
-<template>
-    <label :class="[isButton?'btn btn-'+typeColor:'open checkbox '+typeColor,{active:checked,disabled:disabled,readonly:readonly}]"
-           @click.prevent="toggle">
-        <input type="checkbox"
-               autocomplete="off"
+<template xmlns:v-el='http://www.w3.org/1999/xhtml'>
+    <label :class='[isButton?"btn btn-"+typeColor:"open checkbox "+typeColor,{active:checked,disabled:disabled,readonly:readonly}]'
+           @click.prevent='toggle'>
+        <input type='checkbox'
+               autocomplete='off'
                v-el:input
-               :checked="active"
-               :value="value"
-               :name="name"
-               :readonly="readonly"
-               :disabled="disabled"
-        />
-        <span v-if="!isButton"
-              class="icon dropdown-toggle"
-              :class="[active?'btn-'+typeColor:'',{bg:typeColor==='default'}]"></span>
-        <span v-if="!isButton&active&&typeColor==='default'"
-              class="icon"></span>
+               :checked='active'
+               :value='value'
+               :name='name'
+               :readonly='readonly'
+               :disabled='disabled' />
+        <span v-if='!isButton'
+              class='icon dropdown-toggle'
+              :class='[active?"btn-"+typeColor:"",{bg:typeColor==="default"}]'></span>
+        <span v-if='!isButton&active&&typeColor==="default"'
+              class='icon'></span>
         <slot></slot>
     </label>
 </template>

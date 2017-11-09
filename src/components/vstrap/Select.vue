@@ -1,70 +1,69 @@
-<template>
+<template xmlns:v-el='http://www.w3.org/1999/xhtml'>
     <div v-el:select
-         :class="classes">
-        <div class="form-control dropdown-toggle"
-             :disabled="disabled || !hasParent"
-             :readonly="readonly"
-             @click="toggle()"
-             @keyup.esc="show = false"
-        >
-            <span class="btn-content"
-                  v-html="loading ? text.loading : showPlaceholder || selected"></span>
-            <span v-if="clearButton&&values.length"
-                  class="close"
-                  @click="clear()">&times;</span>
+         :class='classes'>
+        <div class='form-control dropdown-toggle'
+             :disabled='disabled || !hasParent'
+             :readonly='readonly'
+             @click='toggle()'
+             @keyup.esc='show = false'>
+            <span class='btn-content'
+                  v-html='loading ? text.loading : showPlaceholder || selected'></span>
+            <span v-if='clearButton&&values.length'
+                  class='close'
+                  @click='clear()'>&times;</span>
         </div>
         <select v-el:sel
-                v-model="value"
-                v-show="show"
-                name="{{name}}"
-                class="secret"
-                :multiple="multiple"
-                :required="required"
-                :readonly="readonly"
-                :disabled="disabled">
-            <option v-if="required"
-                    value=""></option>
-            <option v-for="option in options"
-                    :value="option[optionsValue]||option">{{ option[optionsLabel]||option }}
+                v-model='value'
+                v-show='show'
+                name='{{name}}'
+                class='secret'
+                :multiple='multiple'
+                :required='required'
+                :readonly='readonly'
+                :disabled='disabled'>
+            <option v-if='required'
+                    value=''></option>
+            <option v-for='option in options'
+                    :value='option[optionsValue]||option'>{{ option[optionsLabel]||option }}
             </option>
         </select>
-        <ul class="dropdown-menu">
-            <template v-if="options.length">
-                <li v-if="canSearch"
-                    class="bs-searchbox">
-                    <input type="text"
-                           placeholder="{{searchText||text.search}}"
-                           class="form-control"
-                           autocomplete="off"
+        <ul class='dropdown-menu'>
+            <template v-if='options.length'>
+                <li v-if='canSearch'
+                    class='bs-searchbox'>
+                    <input type='text'
+                           placeholder='{{searchText||text.search}}'
+                           class='form-control'
+                           autocomplete='off'
                            v-el:search
-                           v-model="searchValue"
-                           @keyup.esc="show = false"
+                           v-model='searchValue'
+                           @keyup.esc='show = false'
                     />
-                    <span v-show="searchValue"
-                          class="close"
-                          @click="clearSearch">&times;</span>
+                    <span v-show='searchValue'
+                          class='close'
+                          @click='clearSearch'>&times;</span>
                 </li>
-                <li v-if="required&&!clearButton">
-                    <a @mousedown.prevent="clear() && blur()">{{ placeholder || text.notSelected }}</a>
+                <li v-if='required&&!clearButton'>
+                    <a @mousedown.prevent='clear() && blur()'>{{ placeholder || text.notSelected }}</a>
                 </li>
-                <li v-for="option in options | filterBy searchValue"
-                    :id="option[optionsValue]||option">
-                    <a @mousedown.prevent="select(option[optionsValue],option)">
-                        <span v-html="option[optionsLabel]||option"></span>
-                        <span class="glyphicon glyphicon-ok check-mark"
-                              v-show="isSelected(option[optionsValue])"></span>
+                <li v-for='option in options | filterBy searchValue'
+                    :id='option[optionsValue]||option'>
+                    <a @mousedown.prevent='select(option[optionsValue],option)'>
+                        <span v-html='option[optionsLabel]||option'></span>
+                        <span class='glyphicon glyphicon-ok check-mark'
+                              v-show='isSelected(option[optionsValue])'></span>
                     </a>
                 </li>
             </template>
             <slot></slot>
-            <div v-if="showNotify && !closeOnSelect"
-                 class="notify in"
-                 transition="fadein">{{limitText}}
+            <div v-if='showNotify && !closeOnSelect'
+                 class='notify in'
+                 transition='fadein'>{{limitText}}
             </div>
         </ul>
-        <div v-if="showNotify && closeOnSelect"
-             class="notify out"
-             transition="fadein">
+        <div v-if='showNotify && closeOnSelect'
+             class='notify out'
+             transition='fadein'>
             <div>{{limitText}}</div>
         </div>
     </div>

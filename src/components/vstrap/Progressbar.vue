@@ -1,15 +1,14 @@
 <template>
-    <div role="progressbar"
-         :class="['progress-bar',{
-      'progress-bar-success':type == 'success',
-      'progress-bar-warning':type == 'warning',
-      'progress-bar-info':type == 'info',
-      'progress-bar-danger':type == 'danger',
-      'progress-bar-striped':striped,
-      'active':animated
-    }]"
-         :style="{width: now + '%'}"
-    >
+    <div role='progressbar'
+         :class='["progress-bar",{
+              "progress-bar-success":type == "success",
+              "progress-bar-warning":type == "warning",
+              "progress-bar-info":type == "info",
+              "progress-bar-danger":type == "danger",
+              "progress-bar-striped":striped,
+              "active":animated
+            }]'
+         :style='{width: now + "%"}'>
         {{label ? now + '%' : ''}}
     </div>
 </template>

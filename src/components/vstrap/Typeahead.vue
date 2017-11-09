@@ -1,26 +1,25 @@
-<template>
-    <div style="position: relative"
-         v-bind:class="{'open':showDropdown}"
-    >
-        <input type="text"
-               class="form-control"
-               :placeholder="placeholder"
-               autocomplete="off"
-               v-model="value"
-               @input="update"
-               @keydown.up="up"
-               @keydown.down="down"
-               @keydown.enter="hit"
-               @keydown.esc="reset"
-               @blur="showDropdown = false"
-        />
-        <ul class="dropdown-menu"
+<template xmlns:v-bind=' http://www.w3.org/1999/xhtml'
+          xmlns:v-el=' http://www.w3.org/1999/xhtml'>
+    <div style=' position: relative'
+         v-bind:class=' {"open":showDropdown}'>
+        <input type=' text'
+               class=' form-control'
+               :placeholder=' placeholder'
+               autocomplete=' off'
+               v-model=' value'
+               @input=' update'
+               @keydown.up=' up'
+               @keydown.down=' down'
+               @keydown.enter=' hit'
+               @keydown.esc=' reset'
+               @blur=' showDropdown = false' />
+        <ul class=' dropdown-menu'
             v-el:dropdown>
-            <li v-for="item in items"
-                v-bind:class="{'active': isActive($index)}">
-                <a @mousedown.prevent="hit"
-                   @mousemove="setActive($index)">
-                    <partial :name="templateName"></partial>
+            <li v-for=' item in items'
+                v-bind:class=' {"active": isActive($index)}'>
+                <a @mousedown.prevent=' hit'
+                   @mousemove=' setActive($index)'>
+                    <partial :name=' templateName'></partial>
                 </a>
             </li>
         </ul>
@@ -42,7 +41,7 @@
       this.items = this.primitiveData
     },
     partials: {
-      default: '<span v-html="item | highlight value"></span>'
+      default: '<span v-html=" item | highlight value" ></span>'
     },
     props: {
       value: {

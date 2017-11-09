@@ -1,36 +1,34 @@
-<template>
-    <label v-if="buttonStyle"
-           :class="['btn btn-'+typeColor,{active:active,disabled:disabled,readonly:readonly}]"
-           @click.prevent="toggle">
-        <input type="radio"
-               autocomplete="off"
+<template xmlns:v-el='http://www.w3.org/1999/xhtml'>
+    <label v-if='buttonStyle'
+           :class='["btn btn-"+typeColor,{active:active,disabled:disabled,readonly:readonly}]'
+           @click.prevent='toggle'>
+        <input type='radio'
+               autocomplete='off'
                v-el:input
-               v-show="!readonly"
-               :checked="active"
-               :value="value"
-               :name="name"
-               :readonly="readonly"
-               :disabled="disabled"
-        />
+               v-show='!readonly'
+               :checked='active'
+               :value='value'
+               :name='name'
+               :readonly='readonly'
+               :disabled='disabled' />
         <slot></slot>
     </label>
     <div v-else
-         :class="['radio',typeColor,{active:active,disabled:disabled,readonly:readonly}]"
-         @click.prevent="toggle">
-        <label class="open">
-            <input type="radio"
-                   autocomplete="off"
+         :class='["radio",typeColor,{active:active,disabled:disabled,readonly:readonly}]'
+         @click.prevent='toggle'>
+        <label class='open'>
+            <input type='radio'
+                   autocomplete='off'
                    v-el:input
-                   :checked="active"
-                   :value="value"
-                   :name="name"
-                   :readonly="readonly"
-                   :disabled="disabled"
-            />
-            <span class="icon dropdown-toggle"
-                  :class="[active?'btn-'+typeColor:'',{bg:typeColor==='default'}]"></span>
-            <span v-if="active&&typeColor==='default'"
-                  class="icon"></span>
+                   :checked='active'
+                   :value='value'
+                   :name='name'
+                   :readonly='readonly'
+                   :disabled='disabled' />
+            <span class='icon dropdown-toggle'
+                  :class='[active?"btn-"+typeColor:"",{bg:typeColor==="default"}]'></span>
+            <span v-if='active&&typeColor==="default"'
+                  class='icon'></span>
             <slot></slot>
         </label>
     </div>

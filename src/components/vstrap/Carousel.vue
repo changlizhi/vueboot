@@ -1,34 +1,34 @@
-<template>
-    <div class="carousel slide"
-         data-ride="carousel">
+<template xmlns:v-bind='http://www.w3.org/1999/xhtml'>
+    <div class='carousel slide'
+         data-ride='carousel'>
         <!-- Indicators -->
-        <ol class="carousel-indicators"
-            v-show="indicators">
-            <li v-for="i in indicator"
-                @click="indicatorClick($index)"
-                v-bind:class="{active:$index === index}">
+        <ol class='carousel-indicators'
+            v-show='indicators'>
+            <li v-for='i in indicator'
+                @click='indicatorClick($index)'
+                v-bind:class='{active:$index === index}'>
                 <span></span>
             </li>
         </ol>
         <!-- Wrapper for slides -->
-        <div class="carousel-inner"
-             role="listbox">
+        <div class='carousel-inner'
+             role='listbox'>
             <slot></slot>
         </div>
         <!-- Controls -->
-        <div v-show="controls"
-             class="carousel-controls hidden-xs">
-            <a class="left carousel-control"
-               role="button"
-               @click="prev">
-                <span class="glyphicon glyphicon-chevron-left"
-                      aria-hidden="true"></span>
+        <div v-show='controls'
+             class='carousel-controls hidden-xs'>
+            <a class='left carousel-control'
+               role='button'
+               @click='prev'>
+                <span class='glyphicon glyphicon-chevron-left'
+                      aria-hidden='true'></span>
             </a>
-            <a class="right carousel-control"
-               role="button"
-               @click="next">
-                <span class="glyphicon glyphicon-chevron-right"
-                      aria-hidden="true"></span>
+            <a class='right carousel-control'
+               role='button'
+               @click='next'>
+                <span class='glyphicon glyphicon-chevron-right'
+                      aria-hidden='true'></span>
             </a>
         </div>
     </div>

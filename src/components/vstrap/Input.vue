@@ -1,113 +1,112 @@
-<template>
-    <div class="form-group"
-         :class="{validate:canValidate,'has-feedback':icon,'has-error':canValidate&&valid===false,'has-success':canValidate&&valid}">
-        <slot name="label">
-            <label v-if="label"
-                   class="control-label"
-                   @click="focus">{{label}}
+<template xmlns:v-el='http://www.w3.org/1999/xhtml'>
+    <div class='form-group'
+         :class='{validate:canValidate,"has-feedback":icon,"has-error":canValidate&&valid===false,"has-success":canValidate&&valid}'>
+        <slot name='label'>
+            <label v-if='label'
+                   class='control-label'
+                   @click='focus'>
+                {{label}}
             </label>
         </slot>
-        <div v-if="slots.before||slots.after"
-             class="input-group">
-            <slot name="before"></slot>
-            <textarea v-if="type=='textarea'"
-                      class="form-control"
+        <div v-if='slots.before||slots.after'
+             class='input-group'>
+            <slot name='before'></slot>
+            <textarea v-if='type=="textarea"'
+                      class='form-control'
                       v-el:input
-                      v-model="value"
-                      :cols="cols"
-                      :rows="rows"
-                      :name="name"
-                      :title="attr(title)"
-                      :readonly="readonly"
-                      :required="required"
-                      :disabled="disabled"
-                      :maxlength="maxlength"
-                      :placeholder="placeholder"
-                      @blur="onblur"
-                      @focus="onfocus"
-            ></textarea>
+                      v-model='value'
+                      :cols='cols'
+                      :rows='rows'
+                      :name='name'
+                      :title='attr(title)'
+                      :readonly='readonly'
+                      :required='required'
+                      :disabled='disabled'
+                      :maxlength='maxlength'
+                      :placeholder='placeholder'
+                      @blur='onblur'
+                      @focus='onfocus'></textarea>
             <input v-else
-                   class="form-control"
+                   class='form-control'
                    v-el:input
-                   v-model="value"
-                   :name="name"
-                   :max="attr(max)"
-                   :min="attr(min)"
-                   :step="step"
-                   :type="type"
-                   :title="attr(title)"
-                   :readonly="readonly"
-                   :required="required"
-                   :disabled="disabled"
-                   :maxlength="maxlength"
-                   :placeholder="placeholder"
-                   @keyup.enter="enterSubmit&&submit()"
-                   @blur="onblur"
-                   @focus="onfocus"
-            />
-            <div v-if="showClear && value"
-                 :class="{icon:icon}">
-                <span class="close"
-                      @click="value = ''">&times;</span>
+                   v-model='value'
+                   :name='name'
+                   :max='attr(max)'
+                   :min='attr(min)'
+                   :step='step'
+                   :type='type'
+                   :title='attr(title)'
+                   :readonly='readonly'
+                   :required='required'
+                   :disabled='disabled'
+                   :maxlength='maxlength'
+                   :placeholder='placeholder'
+                   @keyup.enter='enterSubmit&&submit()'
+                   @blur='onblur'
+                   @focus='onfocus' />
+            <div v-if='showClear && value'
+                 :class='{icon:icon}'>
+                <span class='close'
+                      @click='value = "'>&times;</span>
             </div>
-            <div v-if="icon"
-                 class="icon">
-                <span v-if="icon&&valid!==null"
-                      :class="['form-control-feedback glyphicon','glyphicon-'+(valid?'ok':'remove')]"
-                      aria-hidden="true"></span>
+            <div v-if='icon'
+                 class='icon'>
+                <span v-if='icon&&valid!==null'
+                      :class='["form-control-feedback glyphicon","glyphicon-"+(valid?"ok":"remove")]'
+                      aria-hidden='true'></span>
             </div>
-            <slot name="after"></slot>
+            <slot name='after'></slot>
         </div>
         <template v-else>
-            <textarea v-if="type=='textarea'"
-                      class="form-control"
+            <textarea v-if='type=="textarea"'
+                      class='form-control'
                       v-el:input
-                      v-model="value"
-                      :cols="cols"
-                      :rows="rows"
-                      :name="name"
-                      :title="attr(title)"
-                      :readonly="readonly"
-                      :required="required"
-                      :disabled="disabled"
-                      :maxlength="maxlength"
-                      :placeholder="placeholder"
-                      @blur="onblur"
-                      @focus="onfocus"
-            ></textarea>
+                      v-model='value'
+                      :cols='cols'
+                      :rows='rows'
+                      :name='name'
+                      :title='attr(title)'
+                      :readonly='readonly'
+                      :required='required'
+                      :disabled='disabled'
+                      :maxlength='maxlength'
+                      :placeholder='placeholder'
+                      @blur='onblur'
+                      @focus='onfocus'></textarea>
             <input v-else
-                   class="form-control"
+                   class='form-control'
                    v-el:input
-                   v-model="value"
-                   :name="name"
-                   :max="attr(max)"
-                   :min="attr(min)"
-                   :step="step"
-                   :type="type"
-                   :title="attr(title)"
-                   :readonly="readonly"
-                   :required="required"
-                   :disabled="disabled"
-                   :maxlength="maxlength"
-                   :placeholder="placeholder"
-                   @keyup.enter="enterSubmit&&submit()"
-                   @blur="onblur"
-                   @focus="onfocus"
-            />
-            <span v-if="showClear && value"
-                  class="close"
-                  @click="value = ''">&times;</span>
-            <span v-if="icon&&valid!==null"
-                  :class="['form-control-feedback glyphicon','glyphicon-'+(valid?'ok':'remove')]"
-                  aria-hidden="true"></span>
+                   v-model='value'
+                   :name='name'
+                   :max='attr(max)'
+                   :min='attr(min)'
+                   :step='step'
+                   :type='type'
+                   :title='attr(title)'
+                   :readonly='readonly'
+                   :required='required'
+                   :disabled='disabled'
+                   :maxlength='maxlength'
+                   :placeholder='placeholder'
+                   @keyup.enter='enterSubmit&&submit()'
+                   @blur='onblur'
+                   @focus='onfocus' />
+            <span v-if='showClear && value'
+                  class='close'
+                  @click='value = "'>&times;</span>
+            <span v-if='icon&&valid!==null'
+                  :class='["form-control-feedback glyphicon","glyphicon-"+(valid?"ok":"remove")]'
+                  aria-hidden='true'></span>
         </template>
-        <div v-if="showHelp"
-             class="help-block"
-             @click="focus">{{help}}
+        <div v-if='showHelp'
+             class='help-block'
+             @click='focus'>
+            {{help}}
         </div>
-        <div v-if="showError"
-             class="help-block with-errors"
-             @click="focus">{{errorText}}
+        <div v-if='showError'
+             class='help-block with-errors'
+             @click='focus'>
+            {{errorText}}
         </div>
     </div>
 </template>

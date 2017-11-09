@@ -1,27 +1,24 @@
-<template>
-    <div class="aside"
-         v-bind:style="{width:width + 'px'}"
-         v-bind:class="{
-    left:placement === 'left',
-    right:placement === 'right'
-    }"
-         v-show="show"
-         :transition="(this.placement === 'left') ? 'slideleft' : 'slideright'">
-        <div class="aside-dialog">
-            <div class="aside-content">
-                <div class="aside-header">
-                    <button type="button"
-                            class="close"
+<template xmlns:v-bind='http://www.w3.org/1999/xhtml'>
+    <div class='aside'
+         v-show='show'
+         v-bind:style='{width:width + "px"}'
+         v-bind:class='{left:placement === "left", right:placement === "right"}'
+         :transition='(this.placement === "left") ? "slideleft" : "slideright"'>
+        <div class='aside-dialog'>
+            <div class='aside-content'>
+                <div class='aside-header'>
+                    <button type='button'
+                            class='close'
                             @click='close'>
                         <span>&times;</span>
                     </button>
-                    <h4 class="aside-title">
-                        <slot name="header">
+                    <h4 class='aside-title'>
+                        <slot name='header'>
                             {{ header }}
                         </slot>
                     </h4>
                 </div>
-                <div class="aside-body">
+                <div class='aside-body'>
                     <slot></slot>
                 </div>
             </div>

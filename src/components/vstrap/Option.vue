@@ -1,6 +1,6 @@
-<template>
+<template xmlns:v-el='http://www.w3.org/1999/xhtml'>
     <li v-el:v
-        v-if="loading">
+        v-if='loading'>
         <slot></slot>
     </li>
 </template>

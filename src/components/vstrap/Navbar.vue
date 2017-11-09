@@ -1,34 +1,34 @@
-<template>
+<template xmlns:v-bind='http://www.w3.org/1999/xhtml'
+          xmlns:v-el='http://www.w3.org/1999/xhtml'>
     <nav v-el:navbar
-         :class="['navbar',{
-    'navbar-inverse':(type == 'inverse'),
-    'navbar-default':(type == 'default'),
-    'navbar-fixed-top':(placement === 'top'),
-    'navbar-fixed-bottom':(placement === 'bottom'),
-    'navbar-static-top':(placement === 'static')
-  }]">
-        <div v-bind:class="fluid ? 'container-fluid' : 'container'">
-            <div class="navbar-header">
-                <button v-if="!slots.collapse"
-                        type="button"
-                        class="navbar-toggle collapsed"
-                        aria-expanded="false"
-                        @click="toggleCollapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+         :class='["navbar",{
+            "navbar-inverse":(type == "inverse"),
+            "navbar-default":(type == "default"),
+            "navbar-fixed-top":(placement === "top"),
+            "navbar-fixed-bottom":(placement === "bottom"),
+            "navbar-static-top":(placement === "static") }]'>
+        <div v-bind:class='fluid ? "container-fluid" : "container"'>
+            <div class='navbar-header'>
+                <button v-if='!slots.collapse'
+                        type='button'
+                        class='navbar-toggle collapsed'
+                        aria-expanded='false'
+                        @click='toggleCollapse'>
+                    <span class='sr-only'>Toggle navigation</span>
+                    <span class='icon-bar'></span>
+                    <span class='icon-bar'></span>
+                    <span class='icon-bar'></span>
                 </button>
-                <slot name="collapse"></slot>
-                <slot name="brand"></slot>
+                <slot name='collapse'></slot>
+                <slot name='brand'></slot>
             </div>
-            <div :class="['navbar-collapse',{collapse:collapsed}]">
-                <ul class="nav navbar-nav">
+            <div :class='["navbar-collapse",{collapse:collapsed}]'>
+                <ul class='nav navbar-nav'>
                     <slot></slot>
                 </ul>
-                <ul v-if="slots.right"
-                    class="nav navbar-nav navbar-right">
-                    <slot name="right"></slot>
+                <ul v-if='slots.right'
+                    class='nav navbar-nav navbar-right'>
+                    <slot name='right'></slot>
                 </ul>
             </div>
         </div>
@@ -76,17 +76,17 @@
     },
     ready () {
       let $dropdown = $('.dropdown>[data-toggle="dropdown"]', this.$el).parent()
-      $dropdown.on('click', '.dropdown-toggle', (e) => {
+      $dropdown.on('click', '.dropdown-toggle', function (e) {
         e.preventDefault()
-        $dropdown.each((content) => {
+        $dropdown.each(function (content) {
           if (content.contains(e.target)) content.classList.toggle('open')
         })
-      }).on('click', '.dropdown-menu>li>a', (e) => {
-        $dropdown.each((content) => {
+      }).on('click', '.dropdown-menu>li>a', function (e) {
+        $dropdown.each(function (content) {
           if (content.contains(e.target)) content.classList.remove('open')
         })
-      }).onBlur((e) => {
-        $dropdown.each((content) => {
+      }).onBlur(function (e) {
+        $dropdown.each(function (content) {
           if (!content.contains(e.target)) content.classList.remove('open')
         })
       })

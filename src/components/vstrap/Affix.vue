@@ -1,8 +1,8 @@
 <template>
-    <div class="hidden-print hidden-xs hidden-sm">
-        <nav class="bs-docs-sidebar"
-             :class="{affix:affixed}"
-             :style="{marginTop:top}">
+    <div class='hidden-print hidden-xs hidden-sm'>
+        <nav class='bs-docs-sidebar'
+             :class='{affix:affixed}'
+             :style='{marginTop:top}'>
             <slot></slot>
         </nav>
     </div>
