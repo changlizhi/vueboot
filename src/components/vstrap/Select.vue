@@ -76,7 +76,6 @@
     translations
   } from './utils/utils.js'
   import $ from './utils/NodeList.js'
-
   var timeout = {}
   export default {
     props: {
@@ -184,12 +183,14 @@
         this.values.forEach(item => {
           if (~['number', 'string'].indexOf(typeof item)) {
             let option = null
-            if (this.options.some(o => {
+            if (
+              this.options.some(function (o) {
                 if (o instanceof Object ? o[this.optionsValue] === item : o === item) {
                   option = o
                   return true
                 }
-              })) {
+              })
+            ) {
               foundItems.push(option[this.optionsLabel] || option)
             }
           }

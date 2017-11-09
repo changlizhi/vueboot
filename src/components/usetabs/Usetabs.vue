@@ -24,14 +24,17 @@
     </tabs>
 </template>
 <script>
-  import Tabset from 'src/components/vstrap/Tabset.vue'
-  import TabGroup from 'src/components/vstrap/TabGroup.vue'
-  import Tab from 'src/components/vstrap/Tab.vue'
+  //  import {
+  //    Tabset,
+  //    TabGroup,
+  //    Tab
+  //  } from 'src/components/vstrap'
+  import * as Vstrap from 'src/components/vstrap'
   export default{
     components: {
-      tabs: Tabset,
-      tabGroup: TabGroup,
-      tab: Tab
+      tabs: Vstrap.Tabset,
+      tabGroup: Vstrap.TabGroup,
+      tab: Vstrap.Tab
     }
   }
 </script>

@@ -1,5 +1,6 @@
 import {coerce} from './utils.js'
 import $ from './NodeList.js'
+import Vue from 'vue'
 
 export default {
   props: {

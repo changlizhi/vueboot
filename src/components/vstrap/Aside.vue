@@ -69,7 +69,6 @@
             body.style.paddingRight = scrollBarWidth + 'px'
           }
           // request property that requires layout to force a layout
-          var x = this._backdrop.clientHeight
           this._backdrop.classList.add('in')
           $(this._backdrop).on('click', () => this.close())
         } else {

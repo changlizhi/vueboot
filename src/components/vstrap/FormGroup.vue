@@ -4,7 +4,6 @@
 
 <script>
   import {coerce} from './utils/utils.js'
-  import $ from './utils/NodeList.js'
 
   export default {
     props: {
@@ -25,22 +24,7 @@
       lang: {
         type: String,
         default: navigator.language
-      },
-      // readonly: {
-      //   type: Boolean,
-      //   coerce: coerce.boolean,
-      //   default: false
-      // },
-      // required: {
-      //   type: Boolean,
-      //   coerce: coerce.boolean,
-      //   default: false
-      // },
-      // validationDelay: {
-      //   type: Number,
-      //   coerce: coerce.number,
-      //   default: 250
-      // }
+      }
     },
     data () {
       return {
